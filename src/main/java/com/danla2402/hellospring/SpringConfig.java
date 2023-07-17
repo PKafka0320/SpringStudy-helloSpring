@@ -1,6 +1,7 @@
 package com.danla2402.hellospring;
 
 import com.danla2402.hellospring.repository.JdbcMemberRepository;
+import com.danla2402.hellospring.repository.JdbcTemplateMemberRepository;
 import com.danla2402.hellospring.repository.MemberRepository;
 import com.danla2402.hellospring.repository.MemoryMemberRepository;
 import com.danla2402.hellospring.service.MemberService;
@@ -25,6 +26,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
